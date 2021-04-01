@@ -7,6 +7,10 @@
     margin: 15px
 }
 
+.content-client h1{
+    text-transform: uppercase;
+}
+
 .cash{
     border-bottom: 2px solid white;
 }
@@ -22,8 +26,10 @@
     background: yellowgreen;
     margin-left: 5px;
     width: 330px;
-    justify-content: space-between;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
     margin-bottom: -20px;
     padding: 6px;
 }
@@ -58,6 +64,7 @@
 
 .content-icons{
     border-top: 2px solid white;
+    margin-top: 40px;
 }
 
 .in-modal{
@@ -72,4 +79,34 @@
 .in-modal input {
     height: 25px;
     width: 250px;
+}
+
+.content-check{
+    display: flex;
+}
+
+
+.content-check h3{
+    margin-left: -100px;
+    margin-top: 4px;
+}
+
+.content-checks{
+    display: flex;
+}
+
+.content-inp{
+    display: flex;
+}
+
+.content-inp p{
+    margin-top:5px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.icn-modal{
+    margin-top:5px;
+    font-size: 20px;
+    margin-right: 5px;
 }

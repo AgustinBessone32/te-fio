@@ -8,6 +8,9 @@ export const GET_AMOUNT = "GET_AMOUNT"
 export const NEW_CLIENT = "NEW_CLIENT"
 export const DELETE_CLIENT = "DELETE_CLIENT"
 export const ADD_FIAD = "ADD_FIAD"
+export const DELETE_FIAD = "DELETE_FIAD"
+export const ADD_CASH = "ADD_CASH"
+export const ADD_SEARCH = "ADD_SEARCH"
 
 export const newUser = (name) => {
     return function(dispatch){
@@ -66,3 +69,27 @@ export const addFiad = (user, client, raz , cash) => {
             .catch(err => console.log(err))
     }
 }  
+
+
+export const deleteFiad = (user, client ,id) => {
+
+    return function(dispatch){
+        axios.delete(URL + `/api/${user}/deleteFiad/${client}/${id}`)
+            .then(fiads => dispatch({type: DELETE_FIAD , payload : fiads.data.user}))
+            .catch(err => console.log(err))
+    }
+}
+
+export const addCash = (user,client,cash) =>{
+    return function(dispatch){
+        axios.put(URL + `/api/${user}/addCash/${client}/${cash}`)
+            .then(fiads => dispatch({type: ADD_CASH , payload: fiads.data.user}))
+            .catch(err => console.log(err))
+    }
+}
+
+export const setSearch = (name) => {
+    return function(dispatch){
+        dispatch({type : ADD_SEARCH , payload : name})
+    }
+}

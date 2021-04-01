@@ -4,10 +4,10 @@ import {connect} from 'react-redux'
 import {getAllClients} from '../../redux/users/actions'
 import Clients from '../Clients/clients.jsx'
 
-function Home({getAllClients, clients , userR}){
+function Home({getAllClients, search , userR}){
 
     useEffect(() => {
-        getAllClients(userR)
+    getAllClients(userR)
     }, [])
 
     return(
@@ -19,7 +19,8 @@ function Home({getAllClients, clients , userR}){
 const mapStateToProps = (state) => {
     return{
         clients : state.clients,
-        userR: state.user
+        userR: state.user,
+        search : state.search
     }
 }
 

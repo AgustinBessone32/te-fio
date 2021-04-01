@@ -1,9 +1,11 @@
-import {NEW_USER , LOGIN_USER, GET_CLIENTS, GET_AMOUNT, NEW_CLIENT, DELETE_CLIENT , ADD_FIAD} from './actions'
+import {NEW_USER , LOGIN_USER, GET_CLIENTS, GET_AMOUNT,
+         NEW_CLIENT, DELETE_CLIENT , ADD_FIAD, DELETE_FIAD , ADD_CASH, ADD_SEARCH} from './actions'
 
 const initialState = {
     user: null,
     clients: [],
-    amount : 0
+    amount : 0,
+    search : ''
 }
 
 const userReducer =(state = initialState , action ) => {
@@ -53,6 +55,27 @@ const userReducer =(state = initialState , action ) => {
             return{
                 ...state,
                 clients : action.payload
+            }
+        }
+
+        case DELETE_FIAD:{
+            return{
+                ...state,
+                clients: action.payload
+            }
+        }
+
+        case ADD_CASH:{
+            return{
+                ...state,
+                clients: action.payload
+            }
+        }
+
+        case ADD_SEARCH:{
+            return{
+                ...state,
+                search: action.payload
             }
         }
     

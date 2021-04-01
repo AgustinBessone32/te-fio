@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import './client.css'
 import { MdDelete } from 'react-icons/md';
-import { BiAddToQueue } from 'react-icons/bi';
+import { BiAddToQueue , BiPencil } from 'react-icons/bi';
 import {connect} from 'react-redux'
-import {getAmount , deleteClient , addFiad} from '../../redux/users/actions'
+import {deleteFiad , deleteClient , addFiad, addCash} from '../../redux/users/actions'
 import Modal from 'react-modal'
  
-function Client({client , amount , getAmount , userR , deleteClient, addFiad}){
+function Client({client, userR , deleteClient, addFiad, deleteFiad, addCash}){
     const [modal , setModal ] = useState(false)
-    const [raz , setRaz ] = useState('')
-    const [cash , setCash ] = useState(0)
+    const [raz , setRaz] = useState('')
+    const [cash , setCash] =useState(0)
+    const [newFiad , setNewFiad] =useState(false)
+    let dinner = 0;
+    let fecha ;
 
     function type(type) {
         if(type === 'recharge') return 'green'
@@ -21,23 +24,35 @@ function Client({client , amount , getAmount , userR , deleteClient, addFiad}){
         setCash(0)
         setRaz('')
         setModal(false)
+        setNewFiad(false)
     }
 
-    useEffect(() => {
-        getAmount(userR , client.name)
-    },[])
+    function addMoney(user,client,id){
+        addCash(user,client,id)
+        setNewFiad(false)
+        setCash(0)
+        setRaz('')
+        setModal(false)
+    }
+    
+    
+    client.fiads.map(fiad => {fiad.type === 'fiado' ? dinner+=fiad.amount : dinner-=fiad.amount
+        fecha= fiad.date.split("T")
+        fecha = fecha[0].split("-")})
+ 
 
     return(
         <div className='content-client'>
             <h1>{client.name}</h1>
-            <h2 className='cash'>Debe ${amount}</h2>
+            <h2 className='cash'>Debe ${dinner}</h2>
             <h2 className='cash'>Historial de fiados</h2>
             {
                 client.fiads.map(fiad => 
                     <div className='content-fiads'>
                         <p className={`fiad ${type(fiad.type)}`}>
-                        {fiad.name}</p>
-                        <p className={`fiad ${type(fiad.type)}`}>${fiad.amount} <MdDelete className='icn-del'/></p>
+                        {fiad.name}<br/>{"Fecha: "+fecha[2]+"-"+fecha[1]+"-"+fecha[0]}</p>
+                        <p className={`fiad ${type(fiad.type)}`}>${fiad.amount} 
+                        <MdDelete onClick={() => deleteFiad(userR, client.name , fiad._id)} className='icn-del'/></p>
                     </div>
                 )
             }
@@ -50,11 +65,29 @@ function Client({client , amount , getAmount , userR , deleteClient, addFiad}){
             <Modal isOpen={modal} className='in-modal'>
                     <h2>Agregar fiado</h2>
                     <h4>Ingrese el motivo del fiado</h4>
-                    <input  type='text' onChange={(e) => setRaz(e.target.value)}></input>
+                    <div className='content-inp'>
+                        <BiPencil className='icn-modal'/>
+                        <input  type='text' onChange={(e) => setRaz(e.target.value)}></input>
+                    </div>
                     <h4>Ingrese el dinero</h4>
-                    <input  type='text' onChange={(e) => setCash(e.target.value)}></input>
+                    <div className='content-inp'>
+                        <p>$</p>
+                        <input  type='text' onChange={(e) => setCash(e.target.value)}></input>
+                    </div>
+                    <h4>Ingrese el tipo de transaccion</h4>
+                    <div className='content-checks'>
+                            <div className='content-check'>
+                                <input type='checkbox' onClick={() => setNewFiad(!newFiad)}/>
+                                <h3>Fiado</h3>
+                            </div>
+                            <div className='content-check'>
+                                <input type='checkbox'/>
+                                <h3>Agrega saldo</h3>
+                            </div>
+                    </div>
                     <div className='content-buttons'>
-                        <button onClick={() => addFi(userR,client.name,raz,cash)} className='btn-modal-agg'>Agregar</button>
+                        <button onClick={() => newFiad === true ? addFi(userR,client.name,raz,cash) :
+                                        addMoney(userR,client.name,cash)} className='btn-modal-agg'>Agregar</button>
                         <button onClick={() => setModal(false)} className='btn-modal-close'>
                             Cerrar</button>
                     </div>
@@ -66,9 +99,8 @@ function Client({client , amount , getAmount , userR , deleteClient, addFiad}){
 
 const mapStateToProps = (state)=> {
     return{
-        amount: state.amount,
         userR : state.user
     }
 }
 
-export default connect(mapStateToProps, {getAmount, deleteClient, addFiad} )(Client)
+export default connect(mapStateToProps, {deleteClient, addFiad, deleteFiad , addCash} )(Client)

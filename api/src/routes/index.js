@@ -17,7 +17,7 @@ router.post('/api/newUser/:user', (req,res) => {
 
 })
 
-router.get('/api/getUser/:user', (req,res) => {
+router.get('/api/getUser/:user/', (req,res) => {
     const user = req.params.user
 
     User.findOne({email:user})
@@ -27,10 +27,11 @@ router.get('/api/getUser/:user', (req,res) => {
 
 router.get('/api/getAllClients/:user', (req,res) => {
     const user = req.params.user
-
+        
     User.findOne({email : user})
-        .then(user => res.status(200).send(user.clients))
-        .catch(err => res.status(400).send(err))
+            .then(user => res.status(200).send(user.clients))
+            .catch(err => console.log(err))
+    
 })
 
 
@@ -42,7 +43,6 @@ router.put('/api/:user/newClient/:client', (req,res) => {
         .then(user => {
             user.clients.push({name : newClient})
             user.save()
-            console.log(user.clients)
             res.status(200).send({message: 'Cliente agregado exitosamente',
                                   client : user.clients})})
         .catch(err => res.status(400).send({message: 'Error al agregar al cliente',
@@ -94,7 +94,7 @@ router.put('/api/:user/addCash/:name/:cash', (req,res) => {
             client[0].fiads.push({name: 'agrego saldo', amount: amount, type:'recharge'})
             user.save()
             res.status(200).send({message: 'Saldo agregado',
-                                  user : user})
+                                  user : user.clients})
         })
         .catch(err => res.status(400).send({message: 'Error al agregar dinero',
                                             error: err}))
@@ -128,7 +128,7 @@ router.delete('/api/:user/deleteFiad/:name/:id', (req,res) => {
             clien[0].fiads= clien[0].fiads.filter(fiad => fiad._id != idFiad)
             user.save()
             res.status(200).send({message: 'Fiado borrado correctamente',
-                                  user: user})
+                                  user: user.clients})
         })
         .catch(err => res.status(400).send({message: 'Error al borrar el fiado',
                                             error : err}))

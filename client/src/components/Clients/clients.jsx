@@ -3,9 +3,9 @@ import './clients.css'
 import Client from '../Client/client'
 import {connect} from 'react-redux'
 
-function Clients({clients}){
-    
-
+function Clients({clients , search}){
+    console.log(clients)
+    if(search !== '') clients = clients.filter(client => client.name.includes(search))
     return(
         <div className='content-all-clients'>
             {
@@ -18,7 +18,8 @@ function Clients({clients}){
 
 const mapStateToProps = (state) => {
     return{
-        clients: state.clients
+        clients: state.clients,
+        search : state.search
     }
 } 
 
