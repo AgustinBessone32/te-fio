@@ -9,8 +9,9 @@ function Clients({clients , search}){
     return(
         <div className='content-all-clients'>
             {
-             clients.map(cl => 
+             clients?.length > 0 ? clients.map(cl => 
                     <Client key={cl._id} client={cl}/>)
+                    : <p className='msg-clients'>Aun no tienes clientes</p>
             }
         </div>
     )

@@ -5,3 +5,9 @@
     flex-wrap: wrap;
     padding-top: 20px;
 }
+
+.msg-clients{
+    font-size: 40px;
+    color: white;
+    margin-top: 300px;
+}

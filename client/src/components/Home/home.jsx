@@ -3,16 +3,20 @@ import './home.css'
 import {connect} from 'react-redux'
 import {getAllClients} from '../../redux/users/actions'
 import Clients from '../Clients/clients.jsx'
+import { useHistory } from 'react-router'
 
-function Home({getAllClients, search , userR}){
+function Home({getAllClients, userR}){
+    let history = useHistory()
 
     useEffect(() => {
-    getAllClients(userR)
+        userR === null ? history.push('/') : getAllClients(userR)
     }, [])
 
+    
+    
     return(
     <div className='content-all-home'>
-        <Clients/>
+         <Clients/>
     </div>)
 }
 
