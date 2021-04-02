@@ -49,8 +49,8 @@ function Client({client, userR , deleteClient, addFiad, deleteFiad, addCash}){
             {
                 client.fiads.map(fiad => 
                     <div className='content-fiads'>
-                        <p className={`fiad ${type(fiad.type)}`}>
-                        {fiad.name}<br/>{"Fecha: "+fecha[2]+"-"+fecha[1]+"-"+fecha[0]}</p>
+                        <p id='fiad-one' className={`fiad ${type(fiad.type)}`}>
+                        {fiad.name}<br/>{"FECHA: "+fecha[2]+"-"+fecha[1]+"-"+fecha[0]}</p>
                         <p className={`fiad ${type(fiad.type)}`}>${fiad.amount} 
                         <MdDelete onClick={() => deleteFiad(userR, client.name , fiad._id)} className='icn-del'/></p>
                     </div>

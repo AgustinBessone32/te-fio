@@ -17,8 +17,13 @@
 
 .content-fiads{
     display: flex;
+    justify-content: space-evenly;
     font-size: 18px;
     margin-bottom: 20px;
+}
+
+.content-fiads p{
+    padding-top: 30px;
 }
 
 
@@ -32,6 +37,7 @@
     justify-content: space-between;
     margin-bottom: -20px;
     padding: 6px;
+    text-transform: uppercase;
 }
 
 .fiad.red{
@@ -44,6 +50,7 @@
     justify-content: space-between;
     margin-bottom: -20px;
     padding: 6px;
+    text-transform: uppercase;
 }
 
 .inv{
@@ -109,4 +116,9 @@
     margin-top:5px;
     font-size: 20px;
     margin-right: 5px;
+}
+
+#fiad-one{
+    width: 700px;
+    margin-right: -20px;
 }

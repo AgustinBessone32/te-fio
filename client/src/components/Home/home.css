@@ -3,3 +3,14 @@
     overflow-y: scroll;
     background: url('../../img/bg2.jpg');
 }
+
+.content-all-home::-webkit-scrollbar{
+    background: transparent;
+    width: 12px;
+}
+
+.content-all-home::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 10px;
+    
+}
