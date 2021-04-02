@@ -13,6 +13,7 @@
 
 .cash{
     border-bottom: 2px solid white;
+    font-size: 20px;
 }
 
 .content-fiads{
@@ -121,4 +122,18 @@
 #fiad-one{
     width: 700px;
     margin-right: -20px;
+}
+
+@media screen and (max-width: 400px){
+    .fiad.red{
+        width: 280px;
+    }
+
+    .fiad.green{
+        width: 280px;
+    }
+
+    .content-fiads{
+        max-width: 300px;
+    }
 }
