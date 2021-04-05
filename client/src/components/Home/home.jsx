@@ -5,11 +5,12 @@ import {getAllClients} from '../../redux/users/actions'
 import Clients from '../Clients/clients.jsx'
 import { useHistory } from 'react-router'
 
-function Home({getAllClients, userR}){
+function Home({getAllClients}){
     let history = useHistory()
+    const userL = localStorage.getItem("uss")
 
     useEffect(() => {
-        userR === null ? history.push('/') : getAllClients(userR)
+         userL === null ? history.push('/') : getAllClients(userL)
     }, [])
 
     
@@ -23,7 +24,6 @@ function Home({getAllClients, userR}){
 const mapStateToProps = (state) => {
     return{
         clients : state.clients,
-        userR: state.user,
         search : state.search
     }
 }

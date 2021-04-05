@@ -10,20 +10,23 @@ const Login = ({newUser, userR , loginUser}) => {
     
     const login = (name) => {
         loginUser(name)
+        localStorage.setItem("uss", name)
+        history.push('/home')
     } 
     
     const register = (name) => {
         newUser(name)
     }
 
-    if(userR !== null) history.push('/home')
+    //if(userR !== null) history.push('/home')
 
     return(
         <div className='content-login'>
             <p>Ingrese el nombre de usuario</p>
             <input name='user' onChange={(e) => setUser(e.target.value)}></input>
-            <button onClick={() => register(user)}>Reegistrarse</button>
-            <button onClick={() => login(user)}>Ingresar</button>
+            <button onClick={() => login(user)} className='blue'>Ingresar</button>
+            <button onClick={() => register(user)} className='green'>Registrarse</button>
+            
         </div>
     )
 }

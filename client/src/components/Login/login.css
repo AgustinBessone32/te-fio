@@ -14,12 +14,24 @@
 }
 
 .content-login input{
-    width: 300px;
+    width: 310px;
     height: 30px;
 }
 
 .content-login button{
     margin-top: 10px;
-    width: 300px;
-    height: 30px;
+    width: 310px;
+    height: 40px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    border: 2px solid transparent
+}
+
+
+.blue{
+    background: #3B83BD;
+}
+
+.green{
+    background: #77DD77;
 }

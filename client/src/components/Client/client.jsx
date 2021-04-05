@@ -6,11 +6,12 @@ import {connect} from 'react-redux'
 import {deleteFiad , deleteClient , addFiad, addCash} from '../../redux/users/actions'
 import Modal from 'react-modal'
  
-function Client({client, userR , deleteClient, addFiad, deleteFiad, addCash}){
+function Client({client , deleteClient, addFiad, deleteFiad, addCash}){
     const [modal , setModal ] = useState(false)
     const [raz , setRaz] = useState('')
     const [cash , setCash] =useState(0)
     const [newFiad , setNewFiad] =useState(false)
+    const userR =  localStorage.getItem("uss")
     let dinner = 0;
     let fecha ;
 
@@ -35,6 +36,10 @@ function Client({client, userR , deleteClient, addFiad, deleteFiad, addCash}){
         setModal(false)
     }
     
+    function isFiad(state){
+        if(state === true) return "visibilityOn"
+        return "visibilyOff"
+    }
     
     client.fiads.map(fiad => {fiad.type === 'fiado' ? dinner+=fiad.amount : dinner-=fiad.amount
         fecha= fiad.date.split("T")
@@ -63,17 +68,7 @@ function Client({client, userR , deleteClient, addFiad, deleteFiad, addCash}){
             </div>
 
             <Modal isOpen={modal} className='in-modal'>
-                    <h2>Agregar fiado</h2>
-                    <h4>Ingrese el motivo del fiado</h4>
-                    <div className='content-inp'>
-                        <BiPencil className='icn-modal'/>
-                        <input  type='text' onChange={(e) => setRaz(e.target.value)}></input>
-                    </div>
-                    <h4>Ingrese el dinero</h4>
-                    <div className='content-inp'>
-                        <p>$</p>
-                        <input  type='text' onChange={(e) => setCash(e.target.value)}></input>
-                    </div>
+                    <h2>Agregar transacción al historial</h2>
                     <h4>Ingrese el tipo de transaccion</h4>
                     <div className='content-checks'>
                             <div className='content-check'>
@@ -85,6 +80,17 @@ function Client({client, userR , deleteClient, addFiad, deleteFiad, addCash}){
                                 <h3>Agrega saldo</h3>
                             </div>
                     </div>
+                    <h4 className={`title-inp ${isFiad(newFiad)}`}>Ingrese el motivo del fiado</h4>
+                    <div className={`content-inp ${isFiad(newFiad)}`}>
+                        <BiPencil className='icn-modal'/>
+                        <input  type='text' onChange={(e) => setRaz(e.target.value)}></input>
+                    </div>
+                    <h4>Ingrese el dinero</h4>
+                    <div className='content-inp'>
+                        <p>$</p>
+                        <input  type='text' onChange={(e) => setCash(e.target.value)}></input>
+                    </div>
+
                     <div className='content-buttons'>
                         <button onClick={() => newFiad === true ? addFi(userR,client.name,raz,cash) :
                                         addMoney(userR,client.name,cash)} className='btn-modal-agg'>Agregar</button>

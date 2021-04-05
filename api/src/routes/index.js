@@ -39,7 +39,7 @@ router.put('/api/:user/newClient/:client', (req,res) => {
     const user = req.params.user
     const newClient = req.params.client
 
-    User.findOneAndUpdate({email : user})
+    User.findOne({email : user})
         .then(user => {
             user.clients.push({name : newClient})
             user.save()

@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 function Clients({clients , search}){
     console.log(clients)
     if(search !== '') clients = clients.filter(client => client.name.includes(search))
+    
     return(
         <div className='content-all-clients'>
             {

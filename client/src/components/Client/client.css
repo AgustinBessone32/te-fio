@@ -107,6 +107,22 @@
     display: flex;
 }
 
+.content-inp.visibilyOff{
+    display: none;
+}
+
+.content-inp.visibilyOn{
+    display: block;
+}
+
+.title-inp.visibilyOff{
+    display: none;
+}
+
+.title-inp.visibilyOn{
+    display: block;
+}
+
 .content-inp p{
     margin-top:5px;
     font-size: 20px;

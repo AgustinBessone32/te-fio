@@ -2,15 +2,19 @@ import React , {useState}  from 'react'
 import './nav.css'
 import { SiCashapp } from "react-icons/si";
 import { AiOutlineUserAdd } from "react-icons/ai";
+import { BiLogOut } from "react-icons/bi";
 import {GrSearch} from "react-icons/gr"
 import Modal from 'react-modal'
 import {connect} from 'react-redux'
 import {addClient , setSearch} from '../../redux/users/actions'
+import { useHistory } from 'react-router';
 
  
-const Nav = ({userR , addClient , setSearch}) => {
+const Nav = ({ addClient , setSearch}) => {
     const [modal , setModal] = useState(false)
     const [newClient , setNewClient] = useState('')
+    const userR = localStorage.getItem("uss")
+    const history = useHistory()
 
     function addNewClient(user , client) {
         addClient(client,user)
@@ -35,6 +39,7 @@ const Nav = ({userR , addClient , setSearch}) => {
                 </div>
                 <div className='content-add-client'>
                             <AiOutlineUserAdd onClick={() => setModal(true)}/>
+                            <BiLogOut className='icn-nav' onClick={() => history.push('/')} />
                 </div>
 
             </div>
