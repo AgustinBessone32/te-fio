@@ -1,8 +1,13 @@
 .content-nav{
-    height: 60px;
+    height: 100px;
     background: black;
     display: flex;
     color: white;
+    flex-direction: column;
+}
+
+.txt-nav{
+    display: flex;
     justify-content: space-around;
 }
 
@@ -12,16 +17,18 @@
 
 .content-search{
     background:white ;
-    width: 220px;
+    width: 300px;
     display: flex;
-    height: 30px;
-    margin-top: 16px;
+    margin: auto;
+    height: 32px;
+    margin-top: -10px;
     border-radius: 10px;
 } 
 
 .content-search input{
     border: transparent;
-    font-size: 14px;
+    font-size: 16px;
+    color: black;
 }
 
 .content-search input:focus{
@@ -32,7 +39,8 @@
     font-size: 20px;
     padding-top: 4px;
     padding-left: 4px;
-    padding-right: 4px;
+    padding-right: 6px;
+    
 }
 
 .content-add-client{

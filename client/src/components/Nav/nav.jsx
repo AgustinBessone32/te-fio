@@ -26,20 +26,22 @@ const Nav = ({ addClient , setSearch}) => {
     return(
         <>
             <div className='content-nav'>
-                <p className='title-nav'>TE-FIO <SiCashapp /></p>
+                <div className='txt-nav'>
+                    <p className='title-nav'>TE-FIO <SiCashapp /></p>
+                    <div className='content-add-client'>
+                                <AiOutlineUserAdd onClick={() => setModal(true)} />
+                                <BiLogOut className='icn-nav' onClick={() => history.push('/')} />
+                    </div>
+                </div>
                 <div className='search-nav'>
                     <form>
                         <div className='content-search'>
                             <GrSearch className='icon-search'/>
-                            <input type="text" name='fiad' placeholder='Ingrese la persona'
+                            <input type="text" name='fiad' placeholder='Ingrese la persona...'
                                 onChange={(e) => setSearch(e.target.value)}/>
                         </div>
 
                     </form>
-                </div>
-                <div className='content-add-client'>
-                            <AiOutlineUserAdd onClick={() => setModal(true)}/>
-                            <BiLogOut className='icn-nav' onClick={() => history.push('/')} />
                 </div>
 
             </div>
