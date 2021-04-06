@@ -1,9 +1,10 @@
 {
-  "name": "client",
+  "name": "te-fio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "http://AgustinBessone32.github.io/te-fio",
+  "private": true,
+  "homepage": "https://agustinbessone32.github.io/te-fio",
   "scripts": {
     "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
