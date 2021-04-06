@@ -4,15 +4,18 @@ import Client from '../Client/client'
 import {connect} from 'react-redux'
 
 function Clients({clients , search}){
-    console.log(clients)
-    if(search !== '') clients = clients.filter(client => client.name.includes(search))
+    if(search !== '') clients = clients.filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
     
     return(
         <div className='content-all-clients'>
             {
-             clients?.length > 0 ? clients.map(cl => 
+                search !== '' && clients?.length === 0 ?  <p className='msg-clients'>No se encontro 
+                ningún cliente con ese nombre</p>
+              : 
+            
+                clients?.length > 0 ? clients.map(cl => 
                     <Client key={cl._id} client={cl}/>)
-                    : <p className='msg-clients'>Aun no tienes clientes</p>
+                    : <p className='msg-clients'>Aún no tienes clientes</p>
             }
         </div>
     )

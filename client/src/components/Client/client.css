@@ -156,4 +156,16 @@
     .in-modal h2{
         font-size:20px
     }
+
+    .content-check h3{
+        margin-left: -90px;
+        margin-top: 4px;
+    }
+
+    .content-checks{
+        display: flex;
+        flex-direction: column;
+        margin-left: -90px;
+    }
+
 }

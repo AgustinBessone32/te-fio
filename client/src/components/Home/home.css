@@ -14,3 +14,13 @@
     border-radius: 10px;
     
 }
+
+
+@media screen and (max-width: 400px){
+    .content-all-home::-webkit-scrollbar-thumb{
+        background: transparent;
+        border-radius: 10px;
+    }
+
+
+}

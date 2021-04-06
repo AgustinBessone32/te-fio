@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/te-fio/static/css/main.3aa9f2a5.chunk.css",
-    "main.js": "/te-fio/static/js/main.ce42af05.chunk.js",
-    "main.js.map": "/te-fio/static/js/main.ce42af05.chunk.js.map",
+    "main.css": "/te-fio/static/css/main.e857cbc3.chunk.css",
+    "main.js": "/te-fio/static/js/main.d650fe95.chunk.js",
+    "main.js.map": "/te-fio/static/js/main.d650fe95.chunk.js.map",
     "runtime-main.js": "/te-fio/static/js/runtime-main.b4545608.js",
     "runtime-main.js.map": "/te-fio/static/js/runtime-main.b4545608.js.map",
     "static/js/2.c945fc37.chunk.js": "/te-fio/static/js/2.c945fc37.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.d4ad0c3b.chunk.js": "/te-fio/static/js/3.d4ad0c3b.chunk.js",
     "static/js/3.d4ad0c3b.chunk.js.map": "/te-fio/static/js/3.d4ad0c3b.chunk.js.map",
     "index.html": "/te-fio/index.html",
-    "static/css/main.3aa9f2a5.chunk.css.map": "/te-fio/static/css/main.3aa9f2a5.chunk.css.map",
+    "static/css/main.e857cbc3.chunk.css.map": "/te-fio/static/css/main.e857cbc3.chunk.css.map",
     "static/js/2.c945fc37.chunk.js.LICENSE.txt": "/te-fio/static/js/2.c945fc37.chunk.js.LICENSE.txt",
     "static/media/login.css": "/te-fio/static/media/bg1.eb126889.jpg",
     "static/media/home.css": "/te-fio/static/media/bg2.496f9b06.jpg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.b4545608.js",
     "static/js/2.c945fc37.chunk.js",
-    "static/css/main.3aa9f2a5.chunk.css",
-    "static/js/main.ce42af05.chunk.js"
+    "static/css/main.e857cbc3.chunk.css",
+    "static/js/main.d650fe95.chunk.js"
   ]
 }
