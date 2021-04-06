@@ -24,12 +24,11 @@ const Login = ({newUser, userR , loginUser}) => {
               })
     }
 
-    //if(userR !== null) history.push('/home')
 
     return(
         <div className='content-login'>
             <p>Ingrese el nombre de usuario</p>
-            <input name='user' onChange={(e) => setUser(e.target.value)}></input>
+            <input name='user' onChange={(e) => setUser(e.target.value.toLocaleLowerCase())}></input>
             <button onClick={() => login(user)} className='blue'>Ingresar</button>
             <button onClick={() => register(user)} className='green'>Registrarse</button>
             
