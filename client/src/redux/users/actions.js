@@ -11,6 +11,7 @@ export const ADD_FIAD = "ADD_FIAD"
 export const DELETE_FIAD = "DELETE_FIAD"
 export const ADD_CASH = "ADD_CASH"
 export const ADD_SEARCH = "ADD_SEARCH"
+export const GET_USER = "GET_USER"
 
 export const newUser = (name) => {
     return function(dispatch){
@@ -91,5 +92,13 @@ export const addCash = (user,client,cash) =>{
 export const setSearch = (name) => {
     return function(dispatch){
         dispatch({type : ADD_SEARCH , payload : name})
+    }
+}
+
+export const getUser =(user) =>{
+    return function(dispatch){
+        axios.get(URL + `/api/getUser/${user}`)
+            .then(user => dispatch({type : GET_USER , payload: user.data}))
+            .catch(err => console.log(err))
     }
 }

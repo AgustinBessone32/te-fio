@@ -17,7 +17,7 @@ router.post('/api/newUser/:user', (req,res) => {
 
 })
 
-router.get('/api/getUser/:user/', (req,res) => {
+router.get('/api/getUser/:user', (req,res) => {
     const user = req.params.user
 
     User.findOne({email:user})
