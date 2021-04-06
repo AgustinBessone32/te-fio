@@ -1,1 +1,1 @@
-export const URL = 'http://localhost:4001'
+export const URL = 'https://te-fio.herokuapp.com/'

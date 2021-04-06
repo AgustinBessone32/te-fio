@@ -3,12 +3,13 @@ const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const cors = require('cors')
-
+require('dotenv').config()
 // connect bd
 
 const url = `mongodb+srv://tito:${process.env.PASS}@cluster0.qf6tz.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
 
-mongoose.connect('mongodb://localhost/te-fio')
+
+mongoose.connect(url)
     .then(() => console.log("BD conectada"))
     .catch(err => console.log(err))
 
