@@ -75,9 +75,10 @@ function Client({client , deleteClient, addFiad, deleteFiad, addCash}){
                                 <input type='checkbox' onClick={() => setNewFiad(!newFiad)}/>
                                 <h3>Fiado</h3>
                             </div>
+
                             <div className='content-check'>
-                                <input type='checkbox'/>
-                                <h3>Agrega saldo</h3>
+                                <input type='checkbox' onClick={() => setNewFiad(!newFiad)}/>
+                                <h3>Fiado</h3>
                             </div>
                     </div>
                     <h4 className={`title-inp ${isFiad(newFiad)}`}>Ingrese el motivo del fiado</h4>

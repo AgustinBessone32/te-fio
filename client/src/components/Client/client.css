@@ -152,4 +152,8 @@
     .content-fiads{
         max-width: 300px;
     }
+
+    .in-modal h2{
+        font-size:20px
+    }
 }
