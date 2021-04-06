@@ -1,4 +1,4 @@
-#Te-Fio
+# Te-Fio
 
 Aplicación web que permite llevar un detalle de todas las deudas que poseen los clientes de un determinado comercio.
 
@@ -12,5 +12,6 @@ Administra el detalle de las deudas de cada cliente de tu comercio.
 No solo puedes almacenar las deudas sino que también puedes almacenar los pagos que se vayan realizando.
 
 ![resp](https://user-images.githubusercontent.com/72458804/113486132-89e64f00-9487-11eb-89b1-7c66c882b35c.png)
+
 Totalmente adaptable a cualquier dispositivo!
 
