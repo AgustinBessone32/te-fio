@@ -10,10 +10,10 @@ function App() {
   return (
     <div className="App">
           <Router>
-            <Route exact path='/'>
+            <Route exact path='/te-fio/'>
                 <Login />
             </Route>
-            <Route path='/home'>
+            <Route path='/te-fio/home'>
                 <Nav />
                 <Home />
             </Route>

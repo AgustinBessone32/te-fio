@@ -11,7 +11,7 @@ const Login = ({newUser, userR , loginUser}) => {
     const login = (name) => {
         loginUser(name)
         localStorage.setItem("uss", name)
-        history.push('/home')
+        history.push('/te-fio/home')
     } 
     
     const register = (name) => {

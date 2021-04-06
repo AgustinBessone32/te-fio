@@ -10,7 +10,7 @@ function Home({getAllClients}){
     const userL = localStorage.getItem("uss")
 
     useEffect(() => {
-         userL === null ? history.push('/') : getAllClients(userL)
+         userL === null ? history.push('/te-fio/') : getAllClients(userL)
     }, [])
 
     

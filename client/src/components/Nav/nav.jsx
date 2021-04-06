@@ -30,7 +30,7 @@ const Nav = ({ addClient , setSearch}) => {
                     <p className='title-nav'>TE-FIO <SiCashapp /></p>
                     <div className='content-add-client'>
                                 <AiOutlineUserAdd onClick={() => setModal(true)} />
-                                <BiLogOut className='icn-nav' onClick={() => history.push('/')} />
+                                <BiLogOut className='icn-nav' onClick={() => history.push('/te-fio/')} />
                     </div>
                 </div>
                 <div className='search-nav'>
