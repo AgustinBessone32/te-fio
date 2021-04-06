@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/te-fio/static/css/main.18a07638.chunk.css",
+    "main.js": "/te-fio/static/js/main.e5f8d2de.chunk.js",
+    "main.js.map": "/te-fio/static/js/main.e5f8d2de.chunk.js.map",
+    "runtime-main.js": "/te-fio/static/js/runtime-main.bea91381.js",
+    "runtime-main.js.map": "/te-fio/static/js/runtime-main.bea91381.js.map",
+    "static/js/2.84cf49e7.chunk.js": "/te-fio/static/js/2.84cf49e7.chunk.js",
+    "static/js/2.84cf49e7.chunk.js.map": "/te-fio/static/js/2.84cf49e7.chunk.js.map",
+    "static/js/3.e2e70a2e.chunk.js": "/te-fio/static/js/3.e2e70a2e.chunk.js",
+    "static/js/3.e2e70a2e.chunk.js.map": "/te-fio/static/js/3.e2e70a2e.chunk.js.map",
+    "index.html": "/te-fio/index.html",
+    "static/css/main.18a07638.chunk.css.map": "/te-fio/static/css/main.18a07638.chunk.css.map",
+    "static/js/2.84cf49e7.chunk.js.LICENSE.txt": "/te-fio/static/js/2.84cf49e7.chunk.js.LICENSE.txt",
+    "static/media/login.css": "/te-fio/static/media/bg1.eb126889.jpg",
+    "static/media/home.css": "/te-fio/static/media/bg2.496f9b06.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bea91381.js",
+    "static/js/2.84cf49e7.chunk.js",
+    "static/css/main.18a07638.chunk.css",
+    "static/js/main.e5f8d2de.chunk.js"
+  ]
+}
