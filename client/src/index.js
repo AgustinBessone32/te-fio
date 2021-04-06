@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { ToastProvider } from 'react-toast-notifications';
 import reportWebVitals from './reportWebVitals';
 
 // redux
@@ -10,7 +11,14 @@ import { Provider } from 'react-redux';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ToastProvider
+        autoDismiss
+        autoDismissTimeout={3000}
+        placement="bottom-center" >
+          
+      <App />
+    
+    </ToastProvider>
   </Provider>,
   document.getElementById('root')
 );

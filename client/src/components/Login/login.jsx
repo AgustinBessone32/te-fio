@@ -3,10 +3,12 @@ import './login.css'
 import {connect} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import {newUser, loginUser} from '../../redux/users/actions'
+import { useToasts } from 'react-toast-notifications'
 
 const Login = ({newUser, userR , loginUser}) => {
     const [user , setUser] = useState('')
     const history = useHistory()
+    const { addToast } = useToasts()
     
     const login = (name) => {
         loginUser(name)
@@ -16,6 +18,10 @@ const Login = ({newUser, userR , loginUser}) => {
     
     const register = (name) => {
         newUser(name)
+        addToast('Registro exitoso! Por favor inicie sesión', {
+                appearance: 'success',
+                autoDismiss: true,
+              })
     }
 
     //if(userR !== null) history.push('/home')
