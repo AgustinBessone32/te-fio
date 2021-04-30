@@ -30,8 +30,10 @@
 
 .blue{
     background: #3B83BD;
+    cursor: pointer;
 }
 
 .green{
     background: #77DD77;
+    cursor: pointer;
 }
